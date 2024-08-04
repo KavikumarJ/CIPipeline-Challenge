@@ -57,7 +57,7 @@ pipeline{
          }  
          success {   
             echo "========Deploying executed successfully========"
-            emailext attachLog: true, body: "<b>Example</b><br>Project: ${env.JOB_NAME}", from: 'kavikumarjk01@gmail.com',compressLog: true, mimeType: 'text/html', replyTo: '', subject: "Deploy Successfull Project ${env.JOB_NAME}", to: "kousigowthaman99@gmail.com,kavikumarjk01@gmail.com";
+            emailext attachLog: true, body: "<b>Example</b><br>Project: ${env.JOB_NAME}", from: 'kavikumarjk01@gmail.com',compressLog: true, mimeType: 'text/html', replyTo: '', subject: "Deploy Successfull Project ${env.JOB_NAME}", to: "kavikumarjk01@gmail.com";
          }  
          failure {  
              mail bcc: '', body: "<b>Example</b><br>Project: ${env.JOB_NAME} <br>Build Number: ${env.BUILD_NUMBER} <br> Stage Name: $last_started <br> URL de build: ${env.BUILD_URL}", cc: 'kousigowthaman99@gmail.com', charset: 'UTF-8', from: 'kavikumarjk01@gmail.com', mimeType: 'text/html', replyTo: '', subject: "Deployment failed for Project -> ${env.JOB_NAME}", to: "kavikumarjk01@gmail.com";  
