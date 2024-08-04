@@ -38,12 +38,12 @@ pipeline{
         steps{
      
                  rtUpload (
-                     serverId: 'Artifactory-Server',
+                     serverId: 'Jfrog-server',
                      spec: '''{
           "files": [
             {
               "pattern": "target/*.jar",
-              "target": "art-dev-local"
+              "target": "sample-repo"
             }
          ]
     }'''
