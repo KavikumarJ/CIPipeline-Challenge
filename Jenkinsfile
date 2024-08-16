@@ -34,6 +34,16 @@ pipeline{
            archiveArtifacts artifacts: 'target/*.jar', followSymlinks: false
        }
      }
+       stage('sonar-analysis')
+      {
+        steps {
+                withSonarQubeEnv('sonar_token') {
+                 
+                        sh 'mvn sonar:sonar'
+                    
+                }
+            }
+      }
      stage('deploy to artifactory'){
         steps{
      
